@@ -17,7 +17,7 @@ set(DPP_DIR "${PROJECT_SOURCE_DIR}/libs/DPP")
 add_subdirectory("${DPP_DIR}")
 # create executable from src/
 include_directories("${PROJECT_SOURCE_DIR}/include")
-file(GLOB PROJECT_GLOBBED_SOURCES "${PROJECT_SOURCE_DIR}/src/*.cpp")
+file(GLOB_RECURSE PROJECT_GLOBBED_SOURCES "${PROJECT_SOURCE_DIR}/src/*.cpp")
 add_executable(${PROJECT_NAME} "${PROJECT_GLOBBED_SOURCES}")
 # Link DPP
 target_link_libraries(${PROJECT_NAME} dpp)
